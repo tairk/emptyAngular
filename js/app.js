@@ -1,2 +1,2 @@
-angular.module('app', [])
-    .controller('mainController', mainController);
+'use strict'
+angular.module('app', []);

@@ -2,12 +2,43 @@
 <html ng-app="app">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/styl.css">
         <title>Angular Project</title>
     </head>
     <body ng-controller='mainController as vm'>
+		
+		<form id="add-user">
+    		<label for="firstname">Prénom : </label>
+    		<input id="firstname" ng-model="vm.user.firstname" />
 
-        <script src="js/libs/angular.min.js"></script>
-        <script src="js/controllers/mainController.js"></script>
+    		<label for="lastname">Nom : </label>
+    		<input id="lastname" ng-model="vm.user.lastname" />
+
+    		<label for="Email">eMail : </label>
+   		 	<input id="email" ng-model="vm.user.eMail"/>
+
+   		 	<input type="submit"  id="send-form" ng-click="vm.add()"/>
+    	</form>
+
+        <table id="students">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in vm.users">
+                <td>{{user.lastname}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.eMail}}</td>
+            </tr>
+        </tbody>
+    </table>
+        <script src="https://opensource.keycdn.com/angularjs/1.6.2/angular.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/controllers/mainController.js"></script>
+        
     </body>
 </html>
