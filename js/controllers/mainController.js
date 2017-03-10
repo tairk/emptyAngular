@@ -6,7 +6,7 @@ angular.module("app").controller("mainController", ["$scope", function mainContr
 	}
 
 	this.users = [];
-	this.user = {};
+  this.user = {lastname: "", firstname: "", eMail: ""};
 
 	this.add = () => {
     if (this.user.lastname){
@@ -18,6 +18,6 @@ angular.module("app").controller("mainController", ["$scope", function mainContr
   }
 
   this.reset = () => {
-    this.user = undefined
+    this.user = {lastname: "", firstname: "", eMail: ""};
   }
 }]);
